@@ -1,0 +1,6 @@
+*.pyc
+tests/.pytest_cache
+.pytest_cache
+.venv
+tests/caplog/__pycache__
+.env
