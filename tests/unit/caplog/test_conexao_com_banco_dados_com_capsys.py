@@ -13,14 +13,16 @@ def conectar_bd(CONFIG_BANCO_DADOS):
     logging.info(password)
     logging.info("Inciando conexão com Banco de dados.....")
     
-    resultado = subprocess.run(f"mysqladmin ping -h {host} -u {user} -p {password}",shell=True,capture_output=True,text=True)
+    resultado = subprocess.run(f"mysqladmin ping -h {host} -u {user} --password={password}",shell=True,capture_output=True,text=True)
+
+    logging.info(resultado.returncode)
     
-    if(resultado.returncode == 0):
+    if(resultado.returncode == 0 and "alive" in resultado.stdout):
 
         print(resultado.stdout)
         print("Banco conectado com sucesso !")
 
-    if(resultado.returncode == 1):
+    else:
 
         print(resultado.stderr)
         print("Falha ao conectar !")
@@ -40,7 +42,9 @@ def test_deve_conectar_ao_banco_de_dados(capsys):
     captured = capsys.readouterr()
     assert "Banco conectado com sucesso !" in captured.out
 
-def test_deve_nao_conectar_ao_banco_de_dados(capsys):
+def test_deve_nao_conectar_ao_banco_de_dados(caplog,capsys):
+
+    caplog.set_level(logging.INFO)
 
     CONFIG_BANCO_DADOS = {
 

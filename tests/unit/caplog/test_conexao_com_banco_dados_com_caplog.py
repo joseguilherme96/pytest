@@ -13,14 +13,16 @@ def conectar_bd(CONFIG_BANCO_DADOS):
     logging.info(password)
     logging.info("Inciando conexão com Banco de dados.....")
     
-    resultado = subprocess.run(f"mysqladmin ping -h {host} -u {user} -p {password}",shell=True,capture_output=True,text=True)
+    resultado = subprocess.run(f"mysqladmin ping -h {host} -u {user} --password={password}",shell=True,capture_output=True,text=True)
 
-    if(resultado.returncode == 0):
+    logging.info(resultado.returncode)
+    
+    if(resultado.returncode == 0 and "alive" in resultado.stdout):
 
         logging.info("Banco conectado com sucesso !")
         logging.info(resultado.stdout)
 
-    if(resultado.returncode == 1):
+    else:
 
         logging.error("Falha ao conectar !")
         logging.info(resultado.stderr)
