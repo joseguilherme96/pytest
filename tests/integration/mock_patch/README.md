@@ -12,6 +12,8 @@ Exemplo real de mock em uma implementação conceitual simples real baseado no v
 - Fazerem com que testes obdeçam a assinatura da função/classe com `autospec`
 - Registros de logs com a classe `logging`
 - Uso da fixture `caplog` do pytest para exibir os logs caso houver erro.
+- Injeção de Depêndencia
+- Classe Base Abstratata(ABC) que define contratos entre a classe fornecedora e a classe consumidora.
 
 ---
 
@@ -28,4 +30,5 @@ pytest/
             ├── README.md
             ├── test_mock_bateria_baixa_drone.py
             ├── test_mock_sensor_drone.py
+            ├── test_dependency_injection.py
 ```
