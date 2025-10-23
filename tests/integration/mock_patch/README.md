@@ -14,7 +14,7 @@ Exemplo real de mock em uma implementação conceitual simples real baseado no v
 - Uso da fixture `caplog` do pytest para exibir os logs caso houver erro.
 - Injeção de Depêndencia
 - Classe Base Abstratata(ABC) que define contratos entre a classe fornecedora e a classe consumidora.
-
+- Realizado um exemplo prático de teste de zombaria(Mock) de uma classe conceitual que coloca processa imagens, alterando suas dimensões automaticamente de acordo com a quantidade de imagens por folha, após alteração, o processamento é finalizado com a inserção automática destas imagens dentro de uma folha padronizada no modelo A4, após a inserção o pdf com as imagens é gerado automaticamente.
 ---
 
 📂 **Estrutura de pastas de deste tópico:**
