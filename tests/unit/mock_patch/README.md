@@ -10,7 +10,7 @@ Exemplo real de mock/patch com exemplos simples para autorização de produto, c
 - Testes Unitários
 - Isolamento com mock de algumas funções para atingir objetivo real do teste
 - Fazerem com que testes obdeçam a assinatura da função/classe com `autospec`
-
+- Compreensão entre return_value x side_effect no uso do patch
 ---
 
 📂 **Estrutura de pastas de deste tópico:**
@@ -29,5 +29,6 @@ pytest/
             ├── test_mock_real_class_produto_autospec.py
             ├── test_mock_real_class_produto.py
             ├── test_patch_requests.py
+            ├── test_patch_return_value_side_effect.py
 
 ```
