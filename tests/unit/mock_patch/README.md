@@ -6,6 +6,7 @@ Exemplo real de mock/patch com exemplos simples para autorização de produto, c
 
 - Mock genericos criação de classes/funções
 - Mocks com classes Reais
+- Uso da fixture `mocker` do plugin `pytest-mock` ao invés de importar a classe `Mock`
 - Patch
 - Testes Unitários
 - Isolamento com mock de algumas funções para atingir objetivo real do teste

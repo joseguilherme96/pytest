@@ -10,7 +10,7 @@ def altitude_padrao_voo_drone(relevo_regiao):
 
 def test_altitude_padrao_voo_drone_mockado_com_contexto():
 
-    with patch('test_patch_side_effect.altitude_padrao_voo_drone') as mock_func:
+    with patch('test_patch_return_value_side_effect.altitude_padrao_voo_drone') as mock_func:
         mock_func.side_effect = [100, 400]
 
         assert mock_func('plano') == 100
@@ -18,7 +18,7 @@ def test_altitude_padrao_voo_drone_mockado_com_contexto():
 
 def test_altitude_padrao_voo_drone_mockado_sem_contexto(mocker):
     
-    mocker.patch('test_patch_side_effect.altitude_padrao_voo_drone',
+    mocker.patch('test_patch_return_value_side_effect.altitude_padrao_voo_drone',
                 side_effect = [100, 400]
     )
        
@@ -27,7 +27,7 @@ def test_altitude_padrao_voo_drone_mockado_sem_contexto(mocker):
 
 def test_altitude_padrao_voo_drone_mockado_com_return_value(mocker):
 
-    mocker.patch('test_patch_side_effect.altitude_padrao_voo_drone',
+    mocker.patch('test_patch_return_value_side_effect.altitude_padrao_voo_drone',
                 return_value = 400
     )
 
@@ -36,7 +36,7 @@ def test_altitude_padrao_voo_drone_mockado_com_return_value(mocker):
 
 def test_altitude_padrao_voo_drone_mockado_lamda(mocker):
     
-    mocker.patch('test_patch_side_effect.altitude_padrao_voo_drone',
+    mocker.patch('test_patch_return_value_side_effect.altitude_padrao_voo_drone',
                 side_effect = lambda relevo_regiao: { 
                     
                     "plano": 100,
