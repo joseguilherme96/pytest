@@ -1,0 +1,23 @@
+[default]  
+DEBUG = true  
+DATABASE_URL = "sqlite:///default.db"  
+SECRET_KEY = "default-secret-key"
+PATH_PROCESS = "default/process"  
+  
+[development]  
+DEBUG = true  
+DATABASE_URL = "sqlite:///development.db"  
+SECRET_KEY = "dev-secret-key"  
+PATH_PROCESS = "development/process"
+  
+[testing]  
+DEBUG = true  
+DATABASE_URL = "sqlite:///testing.db"  
+SECRET_KEY = "test-secret-key"
+PATH_PROCESS = "test/process"  
+  
+[production]  
+DEBUG = true  
+DATABASE_URL = "postgresql://user:password@localhost/prod_db"  
+SECRET_KEY = "prod-secret-key"
+PATH_PROCESS = "production/process"
