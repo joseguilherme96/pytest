@@ -1,9 +1,11 @@
 import subprocess,logging
 from dotenv import load_dotenv
 import os
+from pytest import mark
 
 load_dotenv()
 
+@mark.testdb
 def conectar_bd(CONFIG_BANCO_DADOS):
 
     host,user,password = CONFIG_BANCO_DADOS.values()
@@ -27,8 +29,7 @@ def conectar_bd(CONFIG_BANCO_DADOS):
         logging.error("Falha ao conectar !")
         logging.info(resultado.stderr)
 
-
-
+@mark.testdb
 def test_deve_conectar_ao_banco_de_dados(caplog):
 
     caplog.set_level(logging.INFO)
@@ -48,6 +49,7 @@ def test_deve_conectar_ao_banco_de_dados(caplog):
 
     caplog.clear()
 
+@mark.testdb
 def test_deve_nao_conectar_ao_banco_de_dados(caplog):
 
     caplog.set_level(logging.INFO)
