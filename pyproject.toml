@@ -1,0 +1,6 @@
+# As variaveis foram comentadas para não dar conflito com as variaveis de ambiente definidas no pytest.ini
+# pyproject.toml
+#[tool.pytest_env]
+#PASTA_RECEBIMENTO="received"
+#PASTA_PROCESSO="process"
+#PASTA_PROCESSADO="processed"
