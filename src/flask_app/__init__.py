@@ -1,5 +1,5 @@
 from flask import Flask
-from srcs.flask_app.routes import main
+from flask_app.routes import main
 from dynaconf import  FlaskDynaconf
 from pathlib import Path
 

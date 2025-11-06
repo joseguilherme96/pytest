@@ -21,3 +21,5 @@ DEBUG = false
 DATABASE_URL = "postgresql://user:password@localhost/prod_db"  
 SECRET_KEY = "prod-secret-key"
 PATH_PROCESS = "production/process"
+
+

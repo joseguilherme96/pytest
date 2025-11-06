@@ -1,4 +1,5 @@
-from srcs.app.app import get_database_url, is_debug_mode
+from app.app import get_database_url, is_debug_mode
+import sys
 
 def test_database_url_testing_env():
 
