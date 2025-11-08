@@ -38,3 +38,23 @@ def sort_array(input_array: list, sort_key: str, reverse : bool = True) -> list:
     sorted_data = sorted(input_array, key=lambda x: x[sort_key],reverse=reverse)
 
     return sorted_data
+
+def reverse_string(input_string):
+
+    return input_string[::-1]
+
+def complex_string_operation(input_string: str) -> str:
+
+    input_string = input_string.strip().replace(" ","")
+
+    input_string = input_string.upper()
+
+    vowels = ["A","E","I","O","U"]
+
+    for x in input_string:
+
+        if x in vowels:
+
+            input_string = input_string.replace(x,"")
+
+    return input_string

@@ -7,3 +7,4 @@ tests/caplog/__pycache__
 # Ignore dynaconf secret files
 .secrets.*
 logs
+.hypothesis

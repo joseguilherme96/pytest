@@ -1,4 +1,4 @@
-from src.random_operations import find_largest_smallest_item,sort_array
+from src.random_operations import find_largest_smallest_item,sort_array,reverse_string,complex_string_operation
 from hypothesis import given, strategies as st
 from hypothesis import assume as hypothesis_assume
 from pytest import raises
@@ -53,5 +53,23 @@ def test_sort_array_reverse_hypothesis(input_list,reverse):
 
     hypothesis_assume(len(input_list) > 0)
     assert sort_array(input_list,"age",reverse) == sorted(input_list,key=lambda x: x["age"], reverse=reverse)
+
+def test_reverse_string():
+
+    assert reverse_string("hello") == "olleh"
+
+@given(st.text())
+def test_reverse_string_hypothesis(input_string):
+
+    assert reverse_string(input_string) == input_string[::-1]
+
+def test_complex_string_operation():
+
+    assert complex_string_operation(" Hello World ") == "HLLWRLD"
+
+@given(st.text())
+def test_complex_string_operation_with_hypothesis(input_string):
+
+    assert complex_string_operation(input_string) == input_string.strip().replace(" ","").upper().replace("A","").replace("E","").replace("I","").replace("O","").replace("U","")
 
     
