@@ -5,7 +5,7 @@ Compreensão de testes baseados em exemplos e propriedades. Uso da biblioteca `h
 ## 📘 Conceitos abordados
 
 - Testes baseado em exemplos
-- Testes Baseados em Propriedades com o uso da biblioteca `hypothesis`
+- Testes Baseados em Propriedades com o uso da biblioteca `hypothesis` definindo estratégias.
 - Compreensão da classe `Enum`
 
 📂 **Estrutura de pastas de deste tópico:**
