@@ -1,3 +1,3 @@
 # Pytest
 
-Estudos sobre Pytest com exemplos práticos. Aprendendo em [pytest-with-eric](https://pytest-with-eric.com/).
+Estudos sobre testes automatizados, refazendo exemplos práticos do curso [pytest-with-eric](https://pytest-with-eric.com/).
