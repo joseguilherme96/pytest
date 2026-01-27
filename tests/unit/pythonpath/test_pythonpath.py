@@ -1,7 +1,8 @@
 import sys
-import pytest
+from pytest import mark
 from pathlib import Path
 
+@mark.skipif(sys.platform != "win32", reason="Somente windows")
 def test_deve_estar_definido_a_pasta_src_em_sys_path():
 
     caminhos = sys.path
