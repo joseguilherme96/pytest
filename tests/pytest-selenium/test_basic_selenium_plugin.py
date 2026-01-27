@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
+from pytest import mark
 
+@mark.e2e
 def test_pytest_selenium_plugin_example(selenium):
 
     selenium.get("https://pytest-with-eric.com")

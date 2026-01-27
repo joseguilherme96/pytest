@@ -1,9 +1,9 @@
-import pytest
-import pytest
+from pytest import mark
 import re
 from playwright.sync_api import Page, expect, Browser
 
-@pytest.mark.login
+@mark.login
+@mark.e2e
 def test_login_with_video(page: Page,browser: Browser):
 
     context = browser.new_context(record_video_dir="tests/playwright/test_login_with_video/")
