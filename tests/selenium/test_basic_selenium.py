@@ -2,8 +2,9 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+from pytest import mark
 
-
+@mark.e2e
 def test_title(chrome_browser):  
     """  
     Test the title of the Python.org website  
@@ -12,6 +13,7 @@ def test_title(chrome_browser):
     assert chrome_browser.title == "Welcome to Python.org"
     time.sleep(10)
 
+@mark.e2e
 def test_search(chrome_browser):
 
     url = "https://duckduckgo.com/"
@@ -26,6 +28,7 @@ def test_search(chrome_browser):
     assert search_term in chrome_browser.title
     time.sleep(10)
 
+@mark.e2e
 def test_login_functionnality(chrome_browser):
 
     url = "https://practicetestautomation.com/practice-test-login/"

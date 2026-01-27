@@ -3,6 +3,7 @@ import pytest
 import time
 
 @pytest.mark.login
+@pytest.mark.e2e
 def test_login_functionality(chrome_browser):
 
     url = "https://practicetestautomation.com/practice-test-login/"

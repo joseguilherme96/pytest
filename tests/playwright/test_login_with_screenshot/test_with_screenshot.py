@@ -1,9 +1,9 @@
-import pytest
-import pytest
+from pytest import mark
 import re
 from playwright.sync_api import Page, expect
 
-@pytest.mark.login
+@mark.login
+@mark.e2e
 def test_login_with_screenshot(page: Page):
 
     page.goto("https://practicetestautomation.com/practice-test-login/")

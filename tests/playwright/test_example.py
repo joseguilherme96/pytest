@@ -1,15 +1,17 @@
-import pytest
+from pytest import mark
 import re
 from playwright.sync_api import Page, expect
 
-@pytest.mark.basic_playwright
+@mark.basic_playwright
+@mark.e2e
 def test_has_title(page: Page):
 
     page.goto("https://playwright.dev/")
 
     expect(page).to_have_title(re.compile("Playwright"))
 
-@pytest.mark.login
+@mark.login
+@mark.e2e
 def test_login(page: Page):
 
     page.goto("https://practicetestautomation.com/practice-test-login/")
