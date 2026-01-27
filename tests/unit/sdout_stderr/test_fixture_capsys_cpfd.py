@@ -12,7 +12,7 @@ def test_capfd(capfd):
     os.system("echo Passing test: Message to stdout - Running as subprocess")
     read = capfd.readouterr()
 
-    assert read.out == "Passing test: Message to stdout - Running as subprocess\r\n"
+    assert read.out == "Passing test: Message to stdout - Running as subprocess\n"
 
 def test_capfd_print(capfd):
 
