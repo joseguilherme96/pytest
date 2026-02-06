@@ -1,8 +1,13 @@
-from preenchimento_automatico_formulario.selenium_execution.page.contact_page import ContactPage
-from preenchimento_automatico_formulario.selenium_execution.utils.functions import wait_until_browser_closed,configure_webdriver
-from pathlib import Path
+from preenchimento_automatico_formulario.selenium_execution.page.contact_page import (
+    ContactPage,
+)
+from preenchimento_automatico_formulario.selenium_execution.utils.functions import (
+    wait_until_browser_closed,
+    configure_webdriver,
+)
 import os
 from dotenv import load_dotenv
+
 
 def navegator(chrome_browser):
 
@@ -13,9 +18,8 @@ def navegator(chrome_browser):
 
 
 if __name__ == "__main__":
-
     load_dotenv()
-    
+
     browser_path = os.getenv("BROWSER_PATH")
     driver_path = os.getenv("DRIVER_PATH")
 
@@ -27,4 +31,3 @@ if __name__ == "__main__":
     wait_until_browser_closed(driver)
 
     driver.quit()
-    
