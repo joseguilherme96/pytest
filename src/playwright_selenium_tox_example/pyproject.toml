@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "preechimento_automatico_formulario"
+version = "0.1.0"
+description = "Pacote será responsável por abrir o navegador chrome e preencher algumas informações automaticamente que se repetem a cada nova solicitação."
+authors = ["José Guilherme <jose.guilherme96@outlook.com.br>"]
+packages = [
+    { include = "preenchimento_automatico_formulario", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+selenium = "4.27.1"
+dotenv = "^0.9.9"
+
+[tool.poetry.group.playwright.dependencies]
+playwright = { version = ">=1.58,<2.0", python = ">=3.9" }
+
+[tool.poetry.group.dev.dependencies]
+tox = ">=4.1,<5.0"
+pytest = ">=8,<10"
+
+[build-system]
+requires = ["poetry-core>=1.9.1,<2.0.0"]
+build-backend = "poetry.core.masonry.api"
