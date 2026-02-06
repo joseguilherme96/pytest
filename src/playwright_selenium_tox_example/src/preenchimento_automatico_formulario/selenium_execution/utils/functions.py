@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 
+
 def wait_until_browser_closed(driver, poll=0.5):
     while True:
         try:
@@ -11,6 +12,7 @@ def wait_until_browser_closed(driver, poll=0.5):
             time.sleep(poll)
         except WebDriverException:
             break
+
 
 def configure_webdriver(browser_path, driver_path):
     chrome_options = Options()
