@@ -7,3 +7,4 @@ tests/caplog/__pycache__
 .secrets.*
 logs
 .hypothesis
+.coverage
