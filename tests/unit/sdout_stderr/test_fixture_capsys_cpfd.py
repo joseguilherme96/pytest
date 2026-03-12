@@ -1,4 +1,6 @@
 import os
+from pytest import mark
+import sys
 
 def test_capsys(capsys):
 
@@ -7,12 +9,21 @@ def test_capsys(capsys):
 
     assert read.out == ""
 
-def test_capfd(capfd):
+@mark.skipif(sys.platform == "win32", reason="Somente linux")
+def test_capfd_linux(capfd):
 
     os.system("echo Passing test: Message to stdout - Running as subprocess")
     read = capfd.readouterr()
 
     assert read.out == "Passing test: Message to stdout - Running as subprocess\n"
+
+@mark.skipif(sys.platform != "win32", reason="Somente windows")
+def test_capfd_windowns(capfd):
+
+    os.system("echo Passing test: Message to stdout - Running as subprocess")
+    read = capfd.readouterr()
+
+    assert read.out == "Passing test: Message to stdout - Running as subprocess\r\n"
 
 def test_capfd_print(capfd):
 
